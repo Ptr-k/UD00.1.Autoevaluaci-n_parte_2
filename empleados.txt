@@ -1,0 +1,18 @@
+
+EMPLEADO 1:
+Nombre: James Cosling
+DNI: 32000032R
+Sexo: M
+
+Años: 7
+Categoria: 4
+Sueldo:145000
+
+EMPLEADO 2:
+Nombre: Ada Lovelace
+DNI: 32000031R
+Sexo: F
+
+Años: 0
+Categoria: 1
+Sueldo:50000
