@@ -53,52 +53,10 @@ public class CalculaNominas_p2 {
                 out.write(empl2.dni.getBytes(StandardCharsets.UTF_8));
                 out.write(10);
                 out.write(String.valueOf(nom.sueldo(empl2)).getBytes());
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-//            // Parte de la conexión con la base de datos, al igual con
-//            // insertar
-//            conn = DriverManager.getConnection(
-//                    "jdbc:mariadb://localhost:3306/nominas",
-//                    "root", "123456");
-//
-//            // Creación de la tabla "Empleados".
-//            String sql = "CREATE TABLE IF NOT EXISTS Empleados ("
-//                    + " dni VARCHAR(9) PRIMARY KEY,  "
-//                    + " nombre VARCHAR(50) NOT NULL, "
-//                    + " sexo CHAR(1),   "
-//                    + " anyos INTEGER,   "
-//                    + " categoria INTEGER NOT NULL)";
-//            statement = conn.prepareStatement(sql);
-//            statement.execute();
-//
-//            statement = conn.prepareStatement("INSERT INTO Empleados(dni, nombre, sexo, anyos, categoria) VALUES (?, ?, ?, ?, ?)");
-//            for (Empleado empleado : lista) {
-//                statement.setString(1, empleado.dni);
-//                statement.setString(2, empleado.nombre);
-//                statement.setString(3, String.valueOf(empleado.sexo));
-//                statement.setInt(4, empleado.anyos);
-//                statement.setInt(5, empleado.getCategoria());
-//                statement.execute();
-//            }
-//
-//            // Insertar las nóminas
-//            sql = "CREATE TABLE IF NOT EXISTS Nominas ("
-//                    + " sueldo INTEGER PRIMARY KEY,  "
-//                    + " empleado VARCHAR(9), "
-//                    + " FOREIGN KEY(empleado) REFERENCES Empleados(dni))";
-//            statement = conn.prepareStatement(sql);
-//            statement.execute();
-//
-//            statement = conn.prepareStatement("INSERT INTO Nominas(sueldo, empleado) VALUES (?, ?)");
-//            for (Empleado empleado : lista) {
-//                statement.setInt(1, nom.sueldo(empleado));
-//                statement.setString(2, empleado.dni);
-//                statement.execute();
-//            }
 
         } catch (IOException e) {
             System.out.println("No se ha creado el archivo de texto.");
@@ -106,8 +64,6 @@ public class CalculaNominas_p2 {
         } catch (DatosNoCorrectosException e) {
             System.out.println(e.getMessage());
 
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
         }
 
     }
